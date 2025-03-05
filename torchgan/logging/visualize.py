@@ -495,7 +495,7 @@ class ImageVisualize(Visualize):
                 with torch.no_grad():
                     image = generator(*self.test_noise[pos])
                     image = torchvision.utils.make_grid(
-                        image, nrow=self.nrow, normalize=True, range=(-1, 1)
+                        image, nrow=self.nrow, normalize=True
                     )
                     super(ImageVisualize, self).__call__(
                         trainer, image, model, **kwargs
